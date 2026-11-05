@@ -8,7 +8,7 @@ The Sarathi website and Spring Boot API run together. The API saves accounts, eq
 2. Open **Terminal → New Terminal**.
 3. Run `docker compose up --build` and wait until the app reports that it started.
 4. Open the website at http://localhost:8080 and phpMyAdmin at http://localhost:8081.
-
+run docker desktop with this
 The first start creates a local demo equipment owner, eight sample machines, and an available demo operator. Demo owner sign-in:
 
 - Email: `demo.owner@sarathi.test`
@@ -18,7 +18,10 @@ Demo operator sign-in (choose Sign in):
 
 - Email: `demo.operator@sarathi.test`
 - Password: `SarathiOperator#2026`
-
+IF is dose not work use this cammand 
+  git clone https://github.com/rohangowdan82-debug/Sarathi.git
+cd Sarathi
+docker compose up --build
 The operator profile is available for tractor, harvester, rotavator, sprayer, seed drill, and cultivator bookings in Nashik. To try a booking, create a separate Farmer account on the website, open **Find equipment**, choose a machine, select dates, optionally choose Kiran Patil as operator, and submit. Open **My bookings** on the website to see the saved request. In phpMyAdmin, select server `db`, sign in as `sarathi` with password `sarathi_dev_password`, open the `sarathi` database, then select the `bookings` table. The same record is stored there. User accounts are in `users`; sample and owner listings are in `equipment`.
 
 To see the owner side, sign in as the demo owner and open **My bookings** to accept or decline farmer requests. The **Log out** button appears in the top bar after sign-in; the profile area also has a log out icon.
