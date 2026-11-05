@@ -1,0 +1,3 @@
+package com.sarathi.api.auth;
+import jakarta.validation.constraints.*;
+public record RegisterRequest(@NotBlank @Size(min=2,max=100) String fullName,@Email @Size(max=254) String email,@Pattern(regexp="^\\+?[0-9 ()-]{8,24}$") String phone,@NotBlank @Size(min=12,max=128) @Pattern(regexp="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$",message="Use an uppercase letter, lowercase letter, and number") String password,@Pattern(regexp="FARMER|OWNER|OPERATOR") String role,@NotBlank @Size(max=100) String village,@NotBlank @Size(max=100) String district,@Size(max=100) String state,Double latitude,Double longitude) {}
